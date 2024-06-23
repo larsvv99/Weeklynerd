@@ -1,0 +1,182 @@
+@import url('home.css');
+@import url('header.css');
+@import url('vakken.css');
+
+@font-face {
+    font-family: 'Caveat Regular';
+    src: url(../fonts/Caveat-Regular.ttf);
+    type: truetype;
+}
+
+@font-face {
+    font-family: 'Caveat Medium';
+    src: url(../fonts/Caveat-Medium.ttf);
+    type: truetype;
+}
+
+@font-face {
+    font-family: 'Caveat SemiBold';
+    src: url(../fonts/Caveat-SemiBold.ttf);
+    type: truetype;
+}
+
+@font-face {
+    font-family: 'Caveat Bold';
+    src: url(../fonts/Caveat-Bold.ttf);
+    type: truetype;
+}
+
+:root {
+    --color-primary: #323232;
+    --color-secondary: #7b7b7b;
+    --color-tertiary: #f0f0f0;
+    --color-quaternary: #4551C7;
+    --color-quinary: #f17f67;
+    --color-senary: #868cea;
+    --color-septenary: #6bd0cc;
+    --color-octonary: #ffe552;
+    --color-nonary: #fc89e3;
+    --font-style-primary: 'Gill Sans', sans-serif;
+    --font-style-secondary: 'Caveat Medium', sans-serif;
+    /* --font-size: 2em;
+    --font-size-paragraph: calc(var(--font-size) );
+    --font-size-miniparagraph: calc(var(--font-size) * 0.75);
+    --font-size-h1: calc(var(--font-size) * 4);
+    --font-size-h2: calc(var(--font-size) * 3);
+    --font-size-h3: calc(var(--font-size) * 1.1);
+    --font-size-h4: calc(var(--font-size) * .75); */
+
+        /* Basis font-grootte */
+        --font-size: clamp(1.25em, 1.5vw + 1em, 2em);
+
+        /* Andere font-groottes op basis van de basiswaarde */
+        --font-size-paragraph: clamp(1.25em, 1.5vw + 1em, 2em);
+        --font-size-miniparagraph: clamp(0.9375em, 1.125vw + 0.75em, 1.5em);
+        /* 75% van de basiswaarde */
+        --font-size-h1: clamp(5em, 6vw + 2.75em, 8em);
+        /* 400% van de basiswaarde */
+        --font-size-h2: clamp(3.75em, 4.5vw + 1.75em, 6em);
+        /* 300% van de basiswaarde */
+        --font-size-h3: clamp(1.375em, 1.65vw + 1em, 2.2em);
+        /* 110% van de basiswaarde */
+        --font-size-h4: clamp(0.9375em, 1.125vw + 0.75em, 1.5em);
+        /* 75% van de basiswaarde */
+    
+
+    --dropshadow-text: drop-shadow(2px 0 0 var(--dropshadow-color)) drop-shadow(-2px 0 0 var(--dropshadow-color)) drop-shadow(0 2px 0 var(--dropshadow-color)) drop-shadow(0 -2px 0 var(--dropshadow-color)) drop-shadow(5px 5px 0 var(--dropshadow-color));
+    --dropshadow-figuren: drop-shadow(10px 10px 0 var(--dropshadow-color));
+    --dropshadow-button: 10px 10px 0 var(--dropshadow-color);
+    --dropshadow-color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-quaternary);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+section {
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    font-family: var(--font-style-primary);
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    filter: drop-shadow(2px 0 0 black) drop-shadow(-2px 0 0 black) drop-shadow(0 2px 0 black) drop-shadow(0 -2px 0 black) drop-shadow(5px 5px 0 black);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-nonary);
+
+    span {
+        margin-left: 1rem;
+        color: #ffe552;
+        font-family: var(--font-style-secondary);
+        }
+    
+}
+
+h2 {
+    font-size: var(--font-size-h2);  
+    animation-timeline: view();
+    animation-name: leerdoelen;
+    animation-duration: 1ms;
+    animation-fill-mode: forwards;
+    animation-range-start: 0vh;
+    animation-range-end: 60vh;  
+}
+
+.text-texture {
+    background-image: url(../images/figuren/patroon\ 4.svg);
+    background-color: var(--color-tertiary);
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: var(--dropshadow-text);
+    background-size: 2rem;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+p {
+    font-family: var(--font-style-primary);
+    font-size: var(--font-size-miniparagraph);
+    margin: 0;
+    padding: 0;
+    max-width: 75ch;
+}
+
+a,
+label,
+button {
+    text-decoration: none;
+    font-size: var(--font-size-paragraph);
+    font-family: var(--font-style-secondary);
+}
+
+ul{
+    margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-primary);
+    }
+
+    .gastspreker {
+        background-color: var(--color-secondary);
+    }
+}

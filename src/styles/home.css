@@ -1,0 +1,1217 @@
+input[type="checkbox"],
+label {
+    position: absolute;
+    inset: 0;
+    appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html:has(input[data-vak]:checked) .scherm {
+    &.crt::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+        z-index: 2;
+        background-size: 100% 2px, 3px 100%;
+        border-radius: 55px 55px 55px 55px / 30px 30px 30px 30px;
+        pointer-events: none;
+    }
+
+    &.crt::after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(18, 16, 16, 0.1);
+        opacity: 0;
+        z-index: 2;
+        pointer-events: none;
+        border-radius: 55px 55px 55px 55px / 30px 30px 30px 30px;
+        animation: flicker 0.15s infinite;
+    }
+}
+
+html:has(input[data-vak="wafs"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/wafs.jpg);
+}
+
+html:has(input[data-vak="cttr"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/cttr.jpg);
+}
+
+html:has(input[data-vak="bt"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/bt.jpg);
+}
+
+html:has(input[data-vak="hack"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/hack.jpg);
+}
+
+html:has(input[data-vak="hcd"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/hcd.jpg);
+}
+
+html:has(input[data-vak="api"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/api.jpg);
+}
+
+html:has(input[data-vak="meesterproef"]:checked) .scherm {
+    transform: scaleY(1);
+    background-image: url(../images/meesterproef.jpg);
+}
+
+html:has(input[data-vak="wafs"]:checked) .outline a:nth-of-type(1),
+html:has(input[data-vak="cttr"]:checked) .outline a:nth-of-type(2),
+html:has(input[data-vak="bt"]:checked) .outline a:nth-of-type(3),
+html:has(input[data-vak="hack"]:checked) .outline a:nth-of-type(4),
+html:has(input[data-vak="hcd"]:checked) .outline a:nth-of-type(5),
+html:has(input[data-vak="api"]:checked) .outline a:nth-of-type(6),
+html:has(input[data-vak="meesterproef"]:checked) .outline a:nth-of-type(7) {
+    display: flex;
+    width: min-content;
+    height: min-content;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* :focus{
+    outline: 10px solid black;
+    outline-offset: 10px;
+
+} */
+
+input[type="radio"]:focus,
+article:focus {
+    outline: 2px solid white;
+    outline-offset: 5px;
+}
+
+/********/
+/* Hero */
+/********/
+
+#hero {
+    position: relative;
+    height: calc(100vh - 6rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+
+/*********/
+/* Title */
+/*********/
+
+.title {
+    display: flex;
+    justify-content: center;
+    z-index: 50;
+}
+
+.title div {
+    width: 35rem;
+    height: 30rem;
+    background-color: var(--color-septenary);
+    clip-path: polygon(17.5% 100%, 0% 0%, 100% 0%, 82.5% 100%);
+    transform: rotateZ(-10deg);
+    background-image: url(../images/figuren/patroon\ 3.svg);
+    background-repeat: repeat;
+    background-size: 30%;
+    position: relative;
+    grid-area: 1/1;
+    justify-content: center;
+
+}
+
+.patronen {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+
+    .kronkel,
+    .cirkel,
+    .figuur {
+        animation-timeline: scroll();
+        animation-duration: 1ms;
+        animation-name: paralax;
+        animation-range-start: 0;
+        animation-range-end: 90vh;
+        animation-fill-mode: forwards;
+    }
+
+    .kronkel {
+        filter: var(--dropshadow-figuren);
+        position: absolute;
+        z-index: -1;
+        --snelheid: 10rem;
+
+        .cls-1 {
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+            stroke-width: 10px;
+            fill: none;
+        }
+    }
+
+    #kronkel-blauw {
+        top: 0;
+        right: 15%;
+        width: 30%;
+        height: 30%;
+
+        #cls-blauw {
+            stroke: var(--color-senary);
+        }
+    }
+
+    #kronkel-turqoise {
+        bottom: 10%;
+        right: 30%;
+        width: 15%;
+        height: 15%;
+
+
+        #cls-turqoise {
+            stroke: var(--color-septenary);
+        }
+    }
+
+    #kronkel-turqoise2 {
+        top: 15%;
+        right: 2%;
+        width: 15%;
+        height: 15%;
+        --snelheid: 5rem;
+
+
+        #cls-turqoise2 {
+            stroke: var(--color-septenary);
+            stroke-linecap: butt;
+        }
+    }
+
+    #kronkel-geel {
+        top: 0;
+        left: -25%;
+        width: 50%;
+        height: 50%;
+
+
+        #cls-geel {
+            stroke: var(--color-octonary);
+        }
+    }
+
+    #kronkel-rood {
+        bottom: 0;
+        right: -25%;
+        width: 50%;
+        height: 50%;
+
+        #cls-rood {
+            stroke: var(--color-quinary);
+        }
+    }
+
+    #kronkel-roze {
+        bottom: 5%;
+        left: 5%;
+        width: 20%;
+        height: 20%;
+
+        #cls-roze {
+            stroke: var(--color-nonary);
+        }
+    }
+
+    .cirkel {
+        position: absolute;
+        border-radius: 100rem;
+        z-index: -5;
+        --snelheid: 15rem;
+    }
+
+    #cirkel-geel {
+        bottom: 30%;
+        right: 20%;
+        width: 10rem;
+        height: 10rem;
+        background-color: var(--color-octonary);
+    }
+
+    #cirkel-rood {
+        top: 10%;
+        left: 10%;
+        width: 8rem;
+        height: 8rem;
+        background-color: var(--color-quinary);
+    }
+
+    .figuur {
+        position: absolute;
+        z-index: -3;
+        filter: drop-shadow(10px 10px 0 black);
+        --snelheid: 5rem;
+    }
+
+    #figuur-turqoise {
+        fill: var(--color-septenary);
+        stroke-width: 0;
+        bottom: 30%;
+        left: 20%;
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+/* Leerdoelen */
+#leerdoelen {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+
+
+     
+
+#leerdoelen ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+input[type="radio"] {
+    position: absolute;
+    inset: 0;
+    appearance: none;
+}
+
+fieldset {
+    position: relative;
+    border: none;
+
+    .sluiten {
+        position: absolute;
+        opacity: 0;
+        z-index: 2;
+    }
+}
+
+#leerdoelen ul li {
+    display: flex;
+    width: 22rem;
+    height: 5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 1rem;
+    padding: 1rem;
+    transition: 200ms;
+    box-shadow: var(--dropshadow-button);
+    z-index: 3;
+
+    article {
+        display: none;
+        position: absolute;
+        padding: 2rem;
+        inset: 0;
+        overflow: scroll;
+
+
+        h3 {
+            color: var(--color-tertiary);
+            font-size: var(--font-size-h3);
+        }
+
+        p {
+            color: var(--color-primary);
+            margin-top: 1rem;
+        }
+    }
+
+    &:nth-of-type(1) {
+        background-color: var(--color-quinary);
+    }
+
+    &:nth-of-type(2) {
+        background-color: var(--color-septenary);
+    }
+
+    &:nth-of-type(3) {
+        background-color: var(--color-octonary);
+    }
+
+    &:nth-of-type(4) {
+        background-color: var(--color-nonary);
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 13px 13px 0 var(--dropshadow-color);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 var(--dropshadow-color);
+    }
+}
+
+
+
+html:has(input[data-leerdoel="vragenStellen"]:checked) #leerdoelen ul {
+
+    li:nth-of-type(1) {
+        animation: bigger .5s forwards;
+        animation-delay: 0.2s;
+
+        &:hover {
+            transform: scale(1);
+            box-shadow: 10px 10px 0 var(--dropshadow-color);
+        }
+
+        label {
+            opacity: 0;
+        }
+
+        article {
+            display: block;
+        }
+    }
+}
+
+html:has(input[data-leerdoel="toegankelijkheidToepassen"]:checked) #leerdoelen ul {
+
+    li:nth-of-type(2) {
+        animation: bigger .5s forwards;
+
+        &:hover {
+            transform: scale(1);
+            box-shadow: 10px 10px 0 var(--dropshadow-color);
+        }
+
+        label {
+            opacity: 0;
+        }
+
+        article {
+            display: block;
+        }
+    }
+}
+
+html:has(input[data-leerdoel="javascriptLeren"]:checked) #leerdoelen ul {
+
+    li:nth-of-type(3) {
+        animation: bigger 0.5s forwards;
+
+        &:hover {
+            transform: scale(1);
+            box-shadow: 10px 10px 0 var(--dropshadow-color);
+        }
+
+        label {
+            opacity: 0;
+        }
+
+        article {
+            display: block;
+        }
+    }
+}
+
+html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
+
+    li:nth-of-type(4) {
+        animation: bigger 0.5s forwards;
+
+        &:hover {
+            transform: scale(1);
+            box-shadow: 10px 10px 0 var(--dropshadow-color);
+        }
+
+        label {
+            opacity: 0;
+        }
+
+        article {
+            display: block;
+        }
+    }
+}
+
+/* Vakken */
+#vakken {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+.computer {
+    perspective: 100rem;
+    transform-style: preserve-3d;
+    transform: scale(1.1);
+    width: 25rem;
+}
+
+.beeldscherm {
+    transform-origin: bottom;
+    transform: translateZ(-9rem) translatey(5rem) rotatex(-0deg);
+    width: 25rem;
+    height: 20rem;
+    background-image: linear-gradient(#f8f1dc, #bbb39b);
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bovenkant {
+    display: block;
+    width: 25rem;
+    height: 20rem;
+
+    position: absolute;
+    top: 0;
+
+    transform-origin: top;
+    rotate: X -110deg;
+
+    background-color: #bbb39b;
+}
+
+.outline {
+    width: calc(20rem + 10px);
+    height: calc(15rem + 10px);
+    /* background-color: black; */
+    border-radius: 60px 60px 60px 60px / 35px 35px 35px 35px;
+    border: 5px solid var(--color-tertiary);
+    position: relative;
+    display: flex;
+
+
+    &::before {
+        content: "";
+        inset: 0;
+        position: absolute;
+        background-image: linear-gradient(115deg in oklch, transparent 0%, #f8f8f8 25%, transparent 47%, transparent 53%, #848074 75%, transparent 100%);
+        mix-blend-mode: color-dodge;
+        opacity: 0.4;
+        z-index: 5;
+        border-radius: 55px 55px 55px 55px / 30px 30px 30px 30px;
+    }
+
+
+    &::after {
+        content: "";
+        inset: 0;
+        position: absolute;
+        background-color: #121212;
+        border-radius: 55px 55px 55px 55px / 30px 30px 30px 30px;
+    }
+}
+
+.link {
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    border: 0;
+    width: 5rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--dropshadow-button);
+    transition: 200ms;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+
+
+    &:hover {
+        transform: translateX(-50%) translateY(-50%) scale(1.05);
+        box-shadow: 13px 13px 0 var(--dropshadow-color);
+    }
+
+    &:active {
+        transform: translateX(-50%) translateY(-50%) scale(0.95);
+        box-shadow: 0 0 0 var(--dropshadow-color);
+    }
+
+}
+
+
+.scherm {
+    width: 20rem;
+    height: 15rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: 200ms;
+    transform: scaleY(0);
+    transform-origin: center;
+    border-radius: 55px 55px 55px 55px / 30px 30px 30px 30px;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reflection {
+    background-image: linear-gradient(115deg, transparent 0%, var(--gameBoyColor3) 25%, transparent 47%, transparent 53%, var(--gameBoyColor5) 75%, transparent 100%);
+    opacity: 1;
+    position: absolute;
+    inset: 0;
+}
+
+
+
+
+
+/* CONTAINER VAN ALLE TOETSEN */
+.toetsenbord {
+    /* custom properties voor de maten van de toetsen */
+    /* die zijn op meerdere plekken nodig/handig */
+    /* goed idee om die dan een beetje bij elkaar te hebben */
+    --toets-width: 6rem;
+    --toets-height: var(--toets-width);
+    /* een kwart van de breedte hoog */
+    --toets-depth: calc(var(--toets-width) * .25);
+
+    /* een grid van 3 x 2 */
+    /* auto → de maat van de toetsen wordt gebruikt */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    /* een kwart van de breedte ruimte tussen de toetsen */
+    gap: calc(var(--toets-width) * .25);
+
+    /* een derde van de breedte ruimte om de toetsen */
+    padding: calc(var(--toets-width) * .33);
+
+    transform: rotateX(50deg);
+
+    /* het toetsenbord is weer een 3D container voor de toetsen */
+    transform-style: preserve-3d;
+
+    background-image: linear-gradient(#f8f1dc, #bbb39b);
+}
+
+.voorkant {
+    display: block;
+    width: 25rem;
+    height: 2rem;
+    position: absolute;
+    top: 367px;
+    transform-origin: bottom;
+    rotate: X -250deg;
+    background-color: #9b947e;
+}
+
+/* EEN TOETS */
+
+/* bovenkant */
+.toets {
+    /* zodat de kanten in de toets gepositioneerd kunnen worden */
+    position: relative;
+
+    /* handig die custom properties die overal weer terugkomen */
+    width: var(--toets-width);
+    height: var(--toets-height);
+
+    /* letter in het midden van de toets */
+    display: grid;
+    place-items: center;
+
+    /* kleur, lettregrootte en co*/
+    background-color: rgb(235, 235, 235);
+    font-size: calc(var(--toets-width) * .3);
+    line-height: 1;
+
+    /* de diepte van toets naar voren (Z) */
+    transform: translateZ(calc(var(--toets-depth) - 2px));
+
+    /* het toets is weer een 3D container voor de kanten */
+    transform-style: preserve-3d;
+
+    /* de duur van het indrukken */
+    transition: transform .3s;
+
+    label {
+        font-size: 2rem;
+        font-family: var(--font-style-primary);
+    }
+}
+
+.spatie {
+    grid-area: 3/1/3/4;
+    position: relative;
+    height: var(--toets-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    font-size: calc(var(--toets-width) * .3);
+    line-height: 1;
+    transform: translateZ(calc(var(--toets-depth) - 2px));
+    transform-style: preserve-3d;
+    transition: transform .3s;
+
+    label {
+        font-size: 2rem;
+        font-family: var(--font-style-primary);
+    }
+}
+
+.toets:hover,
+.spatie:hover {
+    /* nu een stukje minder ver naar voren (Z) */
+    transform: translateZ(calc(var(--toets-depth) * .75));
+    /* de toetsen steken nu aan de onderkant van het toetsenbord uit */
+    /* maar dat zie je toch niet :) */
+    /* tenzij je de toetsen heel hoog of de hoek heel groot maakt */
+}
+
+.toets:active,
+.spatie:active {
+    /* nog een stukje verder naar voren (Z) */
+    transform: translateZ(calc(var(--toets-depth) * .25));
+}
+
+
+/* DE KANTEN VAN EEN TOETS */
+/* ongeveer zoals je het zelf ook al gedaan had */
+
+/* voorkant */
+.toets .voor {
+    /* op basis van de cust props */
+    display: block;
+    width: var(--toets-width);
+    height: var(--toets-depth);
+
+    /* onderaan de toets */
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    /* dan om de bovenkant draaien */
+    transform-origin: top;
+    rotate: X -90deg;
+
+    background-color: rgb(174, 170, 164);
+}
+
+.spatie .voor {
+
+    display: block;
+    width: calc(var(--toets-width)*3 + var(--toets-width) * 0.25 * 2);
+    height: var(--toets-depth);
+
+    /* onderaan de toets */
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    /* dan om de bovenkant draaien */
+    transform-origin: top;
+    rotate: X -90deg;
+
+    background-color: rgb(174, 170, 164);
+    ;
+}
+
+/* rechts */
+.toets .rechts {
+    display: block;
+    width: var(--toets-depth);
+    height: var(--toets-height);
+
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+
+    transform-origin: left;
+    rotate: Y 90deg;
+
+    background-color: rgb(174, 170, 164);
+}
+
+/* links */
+.toets .links {
+    display: block;
+    width: var(--toets-depth);
+    height: var(--toets-height);
+
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    transform-origin: right;
+    rotate: Y -90deg;
+
+    background-color: rgb(174, 170, 164);
+}
+
+.toets,
+.spatie,
+.links,
+.rechts,
+.voor,
+.toetsenbord,
+.beeldscherm,
+.bovenkant,
+.voorkant,
+.outline {
+    outline: 2px solid black;
+    outline-offset: -2px;
+}
+
+
+
+
+
+
+
+
+@keyframes flicker {
+    0% {
+        opacity: 0.27861;
+    }
+
+    5% {
+        opacity: 0.34769;
+    }
+
+    10% {
+        opacity: 0.23604;
+    }
+
+    15% {
+        opacity: 0.90626;
+    }
+
+    20% {
+        opacity: 0.18128;
+    }
+
+    25% {
+        opacity: 0.83891;
+    }
+
+    30% {
+        opacity: 0.65583;
+    }
+
+    35% {
+        opacity: 0.67807;
+    }
+
+    40% {
+        opacity: 0.26559;
+    }
+
+    45% {
+        opacity: 0.84693;
+    }
+
+    50% {
+        opacity: 0.96019;
+    }
+
+    55% {
+        opacity: 0.08594;
+    }
+
+    60% {
+        opacity: 0.20313;
+    }
+
+    65% {
+        opacity: 0.71988;
+    }
+
+    70% {
+        opacity: 0.53455;
+    }
+
+    75% {
+        opacity: 0.37288;
+    }
+
+    80% {
+        opacity: 0.71428;
+    }
+
+    85% {
+        opacity: 0.70419;
+    }
+
+    90% {
+        opacity: 0.7003;
+    }
+
+    95% {
+        opacity: 0.36108;
+    }
+
+    100% {
+        opacity: 0.24387;
+    }
+}
+
+
+
+
+/* Gastsprekers */
+
+
+#gastsprekers {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 70vh;
+    padding: 0;
+    scroll-margin-top: 12rem;
+
+    h2 {
+        background-size: 2rem;
+        animation-timeline: view();
+        animation-duration: 1ms;
+        animation-name: leerdoelen;
+        animation-range-start: 0vh;
+        animation-range-end: 60vh;
+        animation-fill-mode: forwards;
+    }
+}
+
+#gastsprekers div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+.gastspreker {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 30rem;
+    padding: 2rem;
+    background-color: var(--color-senary);
+    position: relative;
+    border: 2px solid black;
+    transition: 200ms;
+
+    h3,
+    h4 {
+        color: var(--color-tertiary);
+    }
+
+    span {
+        display: block;
+        padding: 1rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+        transition: 200ms;
+    }
+
+    img {
+        height: 90%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        /* filter: drop-shadow(0px 2px 0px black) drop-shadow(2px 0px 0px black) drop-shadow(0px -2px 0px black) drop-shadow(-2px 0px 0px black); */
+    }
+
+    a, button {
+        width: 10rem;
+        padding: 1rem;
+        background-color: var(--color-tertiary);
+        color: var(--color-primary);
+        border: 0;
+        box-shadow: var(--dropshadow-button);
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        transition: 200ms;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 13px 13px 0 var(--dropshadow-color);
+        }
+
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 var(--dropshadow-color);
+        }
+    }
+}
+
+.gastspreker:nth-child(5n + 1) {
+    &:hover {
+        background-color: var(--color-quinary);
+    }
+
+    span {
+        &:nth-of-type(1) {
+            background-color: var(--color-quaternary);
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--color-quinary);
+        }
+
+        &:nth-of-type(3) {
+            background-color: var(--color-septenary);
+        }
+    }
+}
+
+.gastspreker:nth-child(5n + 2) {
+    &:hover {
+        background-color: var(--color-quaternary);
+    }
+
+    span {
+        &:nth-of-type(1) {
+            background-color: var(--color-quinary);
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--color-quaternary);
+        }
+
+        &:nth-of-type(3) {
+            background-color: var(--color-nonary);
+        }
+    }
+}
+
+.gastspreker:nth-child(5n + 3) {
+    &:hover {
+        background-color: var(--color-septenary);
+    }
+
+    span {
+        &:nth-of-type(1) {
+            background-color: var(--color-quaternary);
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--color-septenary);
+        }
+
+        &:nth-of-type(3) {
+            background-color: var(--color-octonary);
+        }
+    }
+}
+
+.gastspreker:nth-child(5n + 4) {
+    &:hover {
+        background-color: var(--color-octonary);
+    }
+
+    span {
+        &:nth-of-type(1) {
+            background-color: var(--color-quinary);
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--color-octonary);
+        }
+
+        &:nth-of-type(3) {
+            background-color: var(--color-quaternary);
+        }
+    }
+}
+
+.gastspreker:nth-child(5n + 5) {
+    &:hover {
+        background-color: var(--color-nonary);
+    }
+
+    span {
+        &:nth-of-type(1) {
+            background-color: var(--color-septenary);
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--color-nonary);
+        }
+
+        &:nth-of-type(3) {
+            background-color: var(--color-quinary);
+        }
+    }
+}
+
+
+
+.gastspreker:nth-child(1n):hover h3 span {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+}
+
+@media screen and (max-width: 1200px) {
+    /* #gastsprekers div {
+        flex-direction: column;
+    } */
+
+    .gastspreker {
+        width: 100%;
+    }
+
+}
+
+
+
+/* Animaties */
+
+@keyframes view {
+    from {
+        background-color: transparent;
+        border-bottom: 0px solid transparent;
+        border-right: 0px solid transparent;
+    }
+
+    to {
+        background-color: var(--color-septenary);
+        border-bottom: 15px solid black;
+        border-right: 15px solid black;
+    }
+}
+
+@keyframes viewhover {
+    from {
+        color: white;
+    }
+
+    to {
+        color: var(--color-quaternary);
+    }
+
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(0.7rem);
+        opacity: 0;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-0.7rem);
+        opacity: 0;
+    }
+}
+
+@keyframes rotateRight {
+    from {
+        transform: translateY(0)rotate(0deg);
+    }
+
+    to {
+        transform: translateY(12px)rotate(45deg);
+    }
+}
+
+@keyframes rotateLeft {
+    from {
+        transform: translateY(0)rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-12px)rotate(-45deg);
+    }
+}
+
+@keyframes paralax {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(var(--snelheid));
+    }
+}
+
+@keyframes bigger {
+    from {
+        width: 22rem;
+        height: 5rem;
+    }
+
+    to {
+        width: 30rem;
+        height: 30rem;
+    }
+}
+
+@keyframes leerdoelen {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+

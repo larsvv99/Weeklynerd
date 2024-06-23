@@ -1,0 +1,33 @@
+<html lang="nl-NL">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="icon" type="image/x-icon" href="">
+
+  {% comment %}
+  <script type="text/javascript" src="/js/header.js"></script> {% endcomment %}
+
+  <title>
+    {{ siteTitle }}
+  </title>
+  {% block head %}
+  {% endblock %}
+</head>
+
+<body>
+  {% include "partials/header.liquid" %}
+  <main>
+    {% include "partials/hero.liquid" %}
+
+    {% block content %}
+    {% endblock %}
+  </main>
+  {% comment %} {% include "partials/footer.liquid" %} {% endcomment %}
+
+  <script src="/js/h1.js"></script>
+
+</body>
+
+</html>

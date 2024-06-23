@@ -1,0 +1,259 @@
+{% layout "layouts/base.liquid" %}
+
+{% block content %}
+<section id="leerdoelen">
+  <h2 class="text-texture">Leerdoelen</h2>
+  <fieldset>
+    <ul>
+      <li>
+        <label for="vragenStellen">Vragen stellen</label>
+        <input tabindex="1" data-leerdoel="vragenStellen" type="radio" name="leerdoelen" id="vragenStellen" />
+        <article>
+          <h3>Vragen stellen</h3>
+          <p>
+            <strong>Specifiek:</strong>
+            Ik wil beter worden in het stellen van vragen tijdens het coderen, omdat ik merk dat ik soms te lang
+            vastloop zonder hulp te vragen.
+          </p>
+          <p>
+            <strong>Meetbaar:</strong>
+            Ik ga mezelf uitdagen om minstens twee keer per dag vragen te stellen als ik vastloop, zodat ik sneller
+            vooruit kan gaan.
+          </p>
+          <p>
+            <strong>Acceptabel:</strong>
+            Ik begrijp nu dat vragen stellen normaal is en ik zal mezelf eraan herinneren dat het me helpt om
+            vooruitgang te boeken.
+          </p>
+          <p>
+            <strong>Realistisch:</strong>
+            Ik weet dat ik soms te lang wacht met vragen stellen, dus ik zal mezelf eraan herinneren om dat te
+            veranderen, zodat ik efficiënter kan werken.
+          </p>
+          <p>
+            <strong>Tijdgebonden:</strong>
+            Binnen 6 weken zal ik mijn voortgang bijhouden en regelmatig feedback vragen om te zorgen dat ik mijn doel
+            bereik.
+          </p>
+        </article>
+      </li>
+      <li>
+        <label for="toegankelijkheidToepassen">Toegankelijkheid toepassen</label>
+        <input tabindex="1" data-leerdoel="toegankelijkheidToepassen" type="radio" name="leerdoelen"
+          id="toegankelijkheidToepassen" />
+        <article>
+          <h3>Toegankelijkheid toepassen</h3>
+          <p>
+            <strong>Specifiek:</strong>
+            Ik wil mijn begrip van toegankelijkheidsprincipes in mijn code verbeteren, omdat ik hier pas recentelijk
+            interesse in heb ontwikkeld.
+          </p>
+          <p>
+            <strong>Meetbaar:</strong>
+            Ik ga regelmatig tijd besteden aan het bestuderen van toegankelijkheidsrichtlijnen en deze toepassen op mijn
+            projectcode.
+          </p>
+          <p>
+            <strong>Acceptabel:</strong>
+            Ik begrijp nu hoe belangrijk toegankelijkheid is en ik ga mezelf uitdagen om dit in mijn project te
+            integreren.
+          </p>
+          <p>
+            <strong>Realistisch:</strong>
+            Ik zal mezelf toestaan om te groeien in mijn begrip van toegankelijkheid door te leren en te experimenteren
+            met verschillende technieken.
+          </p>
+          <p>
+            <strong>Tijdgebonden:</strong>
+            Binnen 6 weken zal ik mijn code evalueren op toegankelijkheid en ervoor zorgen dat ik mijn kennis op dit
+            gebied uitbreid om mijn doel te bereiken.
+          </p>
+        </article>
+      </li>
+      <li>
+        <label for="javascriptLeren">Javascript leren</label>
+        <input tabindex="1" data-leerdoel="javascriptLeren" type="radio" name="leerdoelen" id="javascriptLeren" />
+        <article>
+          <h3>Javascript leren</h3>
+          <p>
+            <strong>Specifiek:</strong>
+            Ik wil beter worden in JavaScript, omdat ik nog steeds moeite heb met zelfstandig coderen in die taal.
+          </p>
+          <p>
+            <strong>Meetbaar:</strong>
+            Ik ga meer JavaScript taken op mij nemen tijdens dit project.
+          </p>
+          <p>
+            <strong>Acceptabel:</strong>
+            Ik zal mezelf toestaan om fouten te maken en geduldig te zijn terwijl ik leer, in plaats van gefrustreerd te
+            raken door mijn huidige vaardigheden.
+          </p>
+          <p>
+            <strong>Realistisch:</strong>
+            Ik weet dat het verbeteren van mijn JavaScript-vaardigheden tijd kost en ik zal mezelf elke dag uitdagen om
+            vooruitgang te boeken, hoe klein ook.
+          </p>
+          <p>
+            <strong>Tijdgebonden:</strong>
+            Binnen de komende 6 weken zal ik mijn voortgang evalueren en ervoor zorgen dat ik mezelf blijf uitdagen om
+            mijn doel te bereiken.
+          </p>
+        </article>
+      </li>
+      <li>
+        <label for="experimenterenProberen">Experimenteren en proberen</label>
+        <input tabindex="1" data-leerdoel="experimenterenProberen" type="radio" name="leerdoelen"
+          id="experimenterenProberen" />
+        <article>
+          <h3>Experimenteren en proberen</h3>
+          <p>
+            <strong>Specifiek:</strong>
+            Ik wil mezelf uitdagen om grotere ontwerp- en codeerdoelen te stellen, omdat ik vaak te voorzichtig ben uit
+            angst om te falen.
+          </p>
+          <p>
+            <strong>Meetbaar:</strong>
+            Elke week zal ik minstens één doel stellen dat me uit mijn comfortzone haalt en mijn vaardigheden uitdaagt.
+          </p>
+          <p>
+            <strong>Acceptabel:</strong>
+            Ik ga accepteren dat fouten maken een deel van het leerproces is en ik zal mezelf toestaan om te groeien
+            door te experimenteren.
+          </p>
+          <p>
+            <strong>Realistisch:</strong>
+            Ik begrijp dat groei komt van buiten mijn comfortzone en ik zal mezelf aanmoedigen om ambitieuzere doelen te
+            stellen.
+          </p>
+          <p>
+            <strong>Tijdgebonden:</strong>
+            In de komende 6 weken zal ik mijn doelen herzien en mezelf uitdagen om meer ambitieuze doelen te stellen.
+          </p>
+        </article>
+      </li>
+    </ul>
+    <label class="sluiten" for=" sluiten"></label>
+    <input tabindex="1" data-leerdoel="sluiten" type="radio" name="leerdoelen" id="sluiten" class="sluiten" />
+
+  </fieldset>
+
+</section>
+
+<section id="vakken">
+  <h2 class="text-texture">Vakken</h2>
+  <div class="computer">
+    <div class="beeldscherm">
+      <div class="bovenkant"></div>
+      <div class="outline">
+        <a class="link" href="/wafs" class="link">Wafs</a>
+        <a href="/cttr" class="link">CTTR</a>
+        <a href="/bt" class="link">Browser Tech</a>
+        <a href="/hack" class="link">Hackathon</a>
+        <a href="/hcd" class="link">HCD</a>
+        <a href="/api" class="link">API</a>
+        <a href="/meesterproef" class="link">Meesterproef</a>
+        <div class="reflection"></div>
+        <div class="scherm crt tv-glow">
+        </div>
+      </div>
+    </div>
+    <div class="toetsenbord">
+      <div class="voorkant"></div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="wafs">
+          WAFS
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="cttr">
+          CTTR
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="bt">
+          BT
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="hack">
+          HACK
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="hcd">
+          HCD
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="toets">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="api">
+          API
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+      <div class="spatie">
+        <label>
+          <input type="checkbox" class="select" name="option" data-vak="meesterproef">
+          MEESTERPROEF
+        </label>
+
+        <span class="voor"></span>
+        <span class="links"></span>
+        <span class="rechts"></span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<section id="gastsprekers">
+  <h2 class="text-texture">Gastsprekers</h2>
+  <div>
+    {% for gastspreker in gastsprekers %}
+
+    <article class="gastspreker">
+      <h3>{{ gastspreker.naam }}</h3>
+      <h4>{{gastspreker.titel}}</h4>
+      <a href="{{ gastspreker.url }}">Lees meer</a>
+      <img src="/images/{{ gastspreker.foto }}" alt="{{ gastspreker.name }}" />
+
+
+    </article>
+    {% endfor %}
+  </div>
+
+
+
+</section>
+
+<script src="/js/index.js"></script>
+<script src="/js/header.js"></script>
+{% endblock %}
