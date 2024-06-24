@@ -3,69 +3,75 @@
 {% block content %}
 <section class="reflectie">
 
-    <h2>Toegankelijkheid</h2>
+    <h2>View transitions</h2>
     <p>
-        Tijdens de laatste Weeklynerd sessie dook Fenna in een onderwerp dat super belangrijk is, maar vaak een beetje
-        vergeten
-        wordt: toegankelijkheid. Ze liet zien hoe je websites kunt bouwen die echt voor iedereen werken, zelfs voor
-        mensen met
-        beperkingen. En geloof me, het was interessanter dan je misschien denkt!
+        Tijdens de Pre CSS day vertelde Bramus over cross-document view transitions voor multi-page
+        applications (MPAs). Deze technologie, ondersteund door Chrome, biedt een vernieuwende manier om vloeiende
+        overgangen tussen verschillende pagina's te creëren, wat een vloeiende gebruikerservaring bevordert.
     </p>
-    <h3>Aria-attributen en Semantiek</h3>
+    <h3>Wat zijn View Transitions?
+    </h3>
     <p>
-        Fenna begon met het uitleggen van Aria-attributen zoals aria-label, aria-labelledby, aria-expanded, en
-        aria-live. Deze
-        kleine stukjes code geven extra info aan screenreaders, waardoor mensen met visuele of motorische beperkingen de
-        site
-        makkelijk kunnen gebruiken. Ze legde uit hoe je deze attributen kunt gebruiken bij dingen zoals menu's,
-        accordions en
-        carrousels om alles duidelijk en navigeerbaar te maken. Daarnaast vertelde ze ook over de alttekst van
-        afbeeldingen, ideale lijnlengtes en lettergroottes en focus guards.
-        Dat allemaal om de site zo toegankelijk mogelijk te maken.
+        View transitions maken het mogelijk om screenshots van de huidige en nieuwe staat van een document te maken en
+        deze te
+        animeren. Dit voorkomt plotselinge wijzigingen op het scherm en zorgt voor een soepeler visuele overgang.
     </p>
 
-    <h3>Praktische Tips</h3>
+    <h3>Hoe Werkt het?
+    </h3>
     <p>
-        Naast de Aria-attributen en semantiek, vertelde Fenna ook over het belang van "Skip to content" knoppen, het
-        instellen
-        van verminderde beweging voor mensen die last hebben van veel bewegende onderdelen, en het pauzeren van
-        autoplay-video's en
-        carrousels.
-        Allemaal super belangrijk voor een betere gebruikservaring!
-        Fenna gaf ook een heleboel praktische tips, zoals het gebruik van role-attributen voor carrousel containers, de
-        juiste
-        semantiek in HTML, en het zorgen voor goede kleurcontrasten en lettergroottes zodat alles makkelijk leesbaar is.
+        Bramus legde uit hoe je met een klik-event document.startViewTransition kunt gebruiken. Hierbij wordt een
+        screenshot van
+        de huidige weergave gemaakt, de volgende functie uitgevoerd, en vervolgens een nieuwe screenshot voor de nieuwe
+        weergave
+        gemaakt. Deze screenshots worden daarna geanimeerd naar de nieuwe staat.
+    </p>
+
+    <h3>Handige tips</h3>
+    <p>
+        Bramus benadrukte het belang van het toevoegen van fallbacks voor browsers die view transitions niet
+        ondersteunen.
+        Daarnaast besprak hij hoe je verschillende lagen van de overgang kunt beheren met ::view-transition, en hoe je
+        keyframes
+        kunt toevoegen voor animaties om de overgangen te stylen. Hij liet ook zien hoe je specifieke elementen kunt
+        targeten
+        met view transitions, bijvoorbeeld door een box te voorzien van een view transition naam.
+    </p>
+
+    <h3>Beperkingen</h3>
+    <p>
+        Hoewel view transitions nog niet perfect zijn, omdat snelle pagina-overgangen de animatie kunnen onderbreken,
+        bieden ze
+        een aanzienlijke verbetering in de gebruikerservaring. Momenteel is er geen automatische waarde voor meerdere
+        elementen,
+        maar Bramus verwacht dat dit in de toekomst zal veranderen.
+    </p>
+
+    <h3>Multi-Page Applications</h3>
+    <p>
+        Ook begon Bramus nog over de MPA's en dat die eerdaags uit zouden komen. Dit is wel alleen beschikbaar in
+        Chrome, dus nog
+        steeds moet je rekening houden met fallback. Ik had hier nog moeite om mij te concetreren en hem te volgen.
     </p>
 
     <h2>Wat vond ik interessant?</h2>
     <p>
-        Het begin was voor mij moeilijk te volgen. Ik snap het nut van de aria-labels wel alleen heb ik nog geen idee
-        hoe te
-        implementeren of welke te gebruiken. Toegankelijkheid was het onderwerp van deze Weeklynerd maakt iets in mij
-        los. Dat
-        heb ik van het begin van deze opleiding al een keer gehad. Ik vind het belangrijk dat een site toegankelijk is
-        voor
-        iedereen. Sommige van deze regels zijn een beetje verwaterd sinds ik weer een tijd uit de code ben, maar ik wil
-        ze graag
-        weer gaan oppakken. Misschien is een standaard Trello afvink lijst hier wel een handig hulpmiddel bij.
+        Ik vond het erg interessant om te zien dat je nu dus een soort app gevoel kan geven aan de gebruiker, terwijl ze
+        wel gewoon in een site zitten. Dit kan de gebruikerservaring enorm verbeteren.
     </p>
 
     <h2>Wat neem ik mee?</h2>
     <ul>
         <li>
-            <p>Een trellobord aanmaken wanneer ik een site begin met alle toegankelijkheid regels daarin zodat ik deze
-                kan afvinken.</p>
-        </li>
-        <li>
-            <p>Verdiepen in de Aria-labels het hoe het precies in zijn werk gaat.</p>
-        </li>
-        <li>
-            <p>Toekomstige sites toegankelijker maken.</p>
-        </li>
-        <li>
-            <p>Meer semantiek in mijn HTML gebruiken.</p>
+            <p>
+                Ik wil graag meer leren over view transitions en hoe ik deze kan toepassen in mijn eigen projecten.
+            </p>
         </li>
     </ul>
 
+</section>
+<section class="prev_next">
+    <a href="/q42" class="button">Vorige Weekly Nerd {% include "partials/prev_next.liquid" %}</a>
+    <a href="/miriam_suzanne" class="button">Volgende Weekly Nerd {% include "partials/prev_next.liquid" %}</a>
 </section>
 {% endblock %}

@@ -90,14 +90,6 @@ export const gastsprekers = [
     },
 
     {
-        naam: "De Waag",
-        titel: "Proefkonijnen",
-        rol: "Medewerkers van De Waag",
-        foto: "waag.png",
-        html: '<h2>Wat'
-    },      
-
-    {
         naam: "Bramus van Damme",
         titel: "View transitions",
         rol: "Web developer",

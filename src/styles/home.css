@@ -140,11 +140,19 @@ article:focus {
     position: relative;
     grid-area: 1/1;
     justify-content: center;
+    transition: 200ms;
+}
 
+@media screen and (max-width: 1200px) {
+    .title div {
+        width: 30rem;
+        height: 25rem;
+    }
+    
 }
 
 .patronen {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     z-index: 0;
@@ -284,6 +292,57 @@ article:focus {
         height: 10rem;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .patronen {
+    #kronkel-blauw {
+            width: 30vw;
+            height: 30vw;
+        }
+    
+        #kronkel-turqoise {
+            width: 15vw;
+            height: 15vw;
+        }
+    
+        #kronkel-turqoise2 {
+            width: 15vw;
+            height: 15vw;
+        }
+    
+        #kronkel-geel {
+            width: 50vw;
+            height: 50vw;
+        }
+    
+        #kronkel-rood {
+            width: 50vw;
+            height: 50vw;
+        }
+    
+        #kronkel-roze {
+            width: 20vw;
+            height: 20vw;
+        }
+    
+        #cirkel-geel {
+            width: 10vw;
+            height: 10vw;
+        }
+    
+        #cirkel-rood {
+            width: 8vw;
+            height: 8vw;
+        }
+    
+        #figuur-turqoise {
+            width: 10vw;
+            height: 10vw;
+        }
+    }
+} 
+    
+
 
 /* Leerdoelen */
 #leerdoelen {
@@ -475,21 +534,31 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    margin-top: 0;
     height: 100vh;
+
+    h2{
+        margin-bottom: 0;
+    }
 }
 
 .computer {
     perspective: 100rem;
     transform-style: preserve-3d;
     transform: scale(1.1);
-    width: 25rem;
+    width:fit-content;
+}
+
+@media screen and (max-width: 720px) {
+    .computer {
+        transform: scale(0.8);
+    }
 }
 
 .beeldscherm {
     transform-origin: bottom;
-    transform: translateZ(-9rem) translatey(5rem) rotatex(-0deg);
-    width: 25rem;
+    transform: translateZ(-7rem) translatey(5rem) rotatex(6deg);
+    width: 33rem;
     height: 20rem;
     background-image: linear-gradient(#f8f1dc, #bbb39b);
     transform-style: preserve-3d;
@@ -500,8 +569,8 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 
 .bovenkant {
     display: block;
-    width: 25rem;
-    height: 20rem;
+    width: 33rem;
+    height: 25rem;
 
     position: absolute;
     top: 0;
@@ -513,7 +582,7 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 }
 
 .outline {
-    width: calc(20rem + 10px);
+    width: calc(24rem + 10px);
     height: calc(15rem + 10px);
     /* background-color: black; */
     border-radius: 60px 60px 60px 60px / 35px 35px 35px 35px;
@@ -577,7 +646,7 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 
 
 .scherm {
-    width: 20rem;
+    width: 25rem;
     height: 15rem;
     background-size: cover;
     background-position: center;
@@ -634,10 +703,10 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 
 .voorkant {
     display: block;
-    width: 25rem;
+    width: 33rem;
     height: 2rem;
     position: absolute;
-    top: 367px;
+    top: 270px;
     transform-origin: bottom;
     rotate: X -250deg;
     background-color: #9b947e;
@@ -679,21 +748,23 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 }
 
 .spatie {
-    grid-area: 3/1/3/4;
+    grid-area: 1 / 4 / 3 / 4;
     position: relative;
-    height: var(--toets-height);
+    width: var(--toets-width);
+    /* height: var(--toets-height); */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(235, 235, 235);
-    font-size: calc(var(--toets-width) * .3);
+    font-size: calc(var(--toets-width) * .2);
     line-height: 1;
     transform: translateZ(calc(var(--toets-depth) - 2px));
     transform-style: preserve-3d;
     transition: transform .3s;
-
+writing-mode: vertical-rl;
+    /* text-orientation: upright; */
     label {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-family: var(--font-style-primary);
     }
 }
@@ -739,7 +810,8 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 .spatie .voor {
 
     display: block;
-    width: calc(var(--toets-width)*3 + var(--toets-width) * 0.25 * 2);
+    width: var(--toets-width);
+    /* width: calc(var(--toets-width)*3 + var(--toets-width) * 0.25 * 2); */
     height: var(--toets-depth);
 
     /* onderaan de toets */
@@ -773,11 +845,10 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 }
 
 /* links */
-.toets .links {
+.toets .links, .spatie .links {
     display: block;
     width: var(--toets-depth);
     height: var(--toets-height);
-
     position: absolute;
     top: 0;
     right: 100%;
@@ -787,6 +858,13 @@ html:has(input[data-leerdoel="experimenterenProberen"]:checked) #leerdoelen ul {
 
     background-color: rgb(174, 170, 164);
 }
+
+
+.spatie .links{
+        height: calc(var(--toets-height) * 2 + var(--toets-width) * .25);
+}
+
+
 
 .toets,
 .spatie,

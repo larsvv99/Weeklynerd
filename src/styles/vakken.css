@@ -38,3 +38,41 @@
     }
 
 }
+
+.prev_next{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.hoofd, .schoen{
+    transition: 200ms;
+}
+
+.prev_next a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--color-tertiary);
+        &:hover .hoofd {
+                fill: var(--color-septenary);
+            }   
+            
+        &:hover .schoen {
+            fill: var(--color-octonary);
+        }
+}
+
+
+
+.prev_next a svg{
+    width: 10rem;
+    height: 10rem;
+    transition: fill .3s;
+}
+
+.prev_next a:nth-last-of-type(2) svg{
+    transform: rotateY(180deg);
+}

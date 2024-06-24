@@ -145,7 +145,7 @@
     <div class="beeldscherm">
       <div class="bovenkant"></div>
       <div class="outline">
-        <a class="link" href="/wafs" class="link">Wafs</a>
+        <a href="/wafs" class="link">Wafs</a>
         <a href="/cttr" class="link">CTTR</a>
         <a href="/bt" class="link">Browser Tech</a>
         <a href="/hack" class="link">Hackathon</a>
@@ -242,7 +242,8 @@
     <article class="gastspreker">
       <h3>{{ gastspreker.naam }}</h3>
       <h4>{{gastspreker.titel}}</h4>
-      <a href="{{ gastspreker.url }}">Lees meer</a>
+      <a href="{{ gastspreker.url }}" aria-label="Lees meer over de presentatie van {{ gastspreker.name }}">Lees
+        meer</a>
       <img src="/images/{{ gastspreker.foto }}" alt="{{ gastspreker.name }}" />
 
 
@@ -253,7 +254,4 @@
 
 
 </section>
-
-<script src="/js/index.js"></script>
-<script src="/js/header.js"></script>
 {% endblock %}
